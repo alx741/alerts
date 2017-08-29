@@ -1,5 +1,13 @@
 {-# LANGUAGE OverloadedStrings #-}
 
+-- | Render 'Alert's using Bootstrap v4.x
+--
+--  Dependencies (These should be accesible in your app):
+--
+-- * Bootstrap's CSS and JS
+--
+-- * JQuery >= 3.2.1
+
 module Web.Alert.Renderer.Bootstrap4
     ( renderAlertsBootstrap4
     ) where

@@ -1,5 +1,15 @@
 {-# LANGUAGE OverloadedStrings #-}
 
+-- | Render 'Alert's using Foundation v5.x
+--
+--  Dependencies (These should be accesible in your app):
+--
+-- * Foundation's CSS and JS
+--
+-- * Modernizr
+--
+-- * JQuery
+
 module Web.Alert.Renderer.Foundation5
     ( renderAlertsFoundation5
     , AlertType(..)
