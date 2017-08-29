@@ -7,6 +7,8 @@ module Web.Alert.Renderer.Foundation5
 
 import Data.Text.Lazy
 import Text.Blaze.Html
+import qualified Text.Blaze.Html5 as H
+import qualified Text.Blaze.Html5.Attributes as A
 
 import Web.Alert
 import Web.Alert.Renderer.Common
@@ -14,13 +16,25 @@ import Web.Alert.Renderer.Common
 -- | Render alerts using Foundation v5.x alerts
 renderAlertsFoundation5 :: AlertType -> [(AlertStatus, Text)] -> Text
 renderAlertsFoundation5 atype = renderAlerts
-    "alert-box" [alertTypeClass atype] (Just $ dataAttribute "alert" "") Nothing foundation5Clases
+    "alert-box"
+    [alertTypeClass atype]
+    (Just $ dataAttribute "alert" "")
+    (Just close)
+    foundation5Clases
 
 -- | Foundation 5.x alert type
 data AlertType
     = Radius -- ^ Slightly rounded corners
     | Round -- ^ Fully rounded corners
     deriving (Eq, Show, Read)
+
+close :: Html
+close =
+    H.button
+    ! A.class_ "close"
+    ! customAttribute "aria-label" "x"
+    $ preEscapedToHtml ("&times;" :: Text)
+
 
 alertTypeClass :: AlertType -> AttributeValue
 alertTypeClass Radius = "radius"
