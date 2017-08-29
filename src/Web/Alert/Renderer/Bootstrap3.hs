@@ -13,7 +13,7 @@ import Web.Alert
 import Web.Alert.Renderer.Common
 
 -- | Render alerts using Bootstrap v3.x alerts
-renderAlertsBootstrap3 :: [(AlertStatus, Text)] -> Text
+renderAlertsBootstrap3 :: [Alert] -> Text
 renderAlertsBootstrap3 = renderAlerts
     "alert"
     []

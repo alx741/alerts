@@ -21,7 +21,7 @@ renderAlerts
     -> Maybe Attribute
     -> Maybe Html
     -> (AlertStatus -> AttributeValue)
-    -> [(AlertStatus, Text)]
+    -> [Alert]
     -> Text
 renderAlerts _ _ _ _ _ [] = mempty
 renderAlerts baseClass extraClass mAttr mInternal clases msgs =
@@ -29,7 +29,7 @@ renderAlerts baseClass extraClass mAttr mInternal clases msgs =
     where
         attr = fromMaybe mempty mAttr
         internal = fromMaybe mempty mInternal
-        makeDivs (stat, msg) =
+        makeDivs (Alert stat msg) =
             H.div
             ! attr
             ! A.class_ baseClass

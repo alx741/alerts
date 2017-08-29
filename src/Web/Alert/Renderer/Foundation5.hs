@@ -14,7 +14,7 @@ import Web.Alert
 import Web.Alert.Renderer.Common
 
 -- | Render alerts using Foundation v5.x alerts
-renderAlertsFoundation5 :: AlertType -> [(AlertStatus, Text)] -> Text
+renderAlertsFoundation5 :: AlertType -> [Alert] -> Text
 renderAlertsFoundation5 atype = renderAlerts
     "alert-box"
     [alertTypeClass atype]
