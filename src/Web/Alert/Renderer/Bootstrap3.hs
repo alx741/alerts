@@ -6,6 +6,8 @@ module Web.Alert.Renderer.Bootstrap3
 
 import Data.Text.Lazy
 import Text.Blaze.Html
+import qualified Text.Blaze.Html5 as H
+import qualified Text.Blaze.Html5.Attributes as A
 
 import Web.Alert
 import Web.Alert.Renderer.Common
@@ -13,7 +15,21 @@ import Web.Alert.Renderer.Common
 -- | Render alerts using Bootstrap v3.x alerts
 renderAlertsBootstrap3 :: [(AlertStatus, Text)] -> Text
 renderAlertsBootstrap3 = renderAlerts
-    "alert" [] (Just $ customAttribute "role" "alert") bootstrap3Clases
+    "alert"
+    []
+    (Just $ customAttribute "role" "alert")
+    (Just close)
+    bootstrap3Clases
+
+close :: Html
+close =
+    H.button
+    ! A.class_ "close"
+    ! A.type_ "button"
+    ! dataAttribute "dismiss" "alert"
+    ! customAttribute "aria-label" "x" $ do
+        H.span ! customAttribute "aria-hidden" "true"
+        $ preEscapedToHtml ("&times;" :: Text)
 
 bootstrap3Clases :: AlertStatus -> AttributeValue
 bootstrap3Clases Default = "alert-default"

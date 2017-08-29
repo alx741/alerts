@@ -14,7 +14,7 @@ import Web.Alert.Renderer.Common
 -- | Render alerts using Foundation v5.x alerts
 renderAlertsFoundation5 :: AlertType -> [(AlertStatus, Text)] -> Text
 renderAlertsFoundation5 atype = renderAlerts
-    "alert-box" [alertTypeClass atype] (Just $ dataAttribute "alert" "") foundation5Clases
+    "alert-box" [alertTypeClass atype] (Just $ dataAttribute "alert" "") Nothing foundation5Clases
 
 -- | Foundation 5.x alert type
 data AlertType
