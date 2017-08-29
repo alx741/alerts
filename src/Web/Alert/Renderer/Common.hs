@@ -1,8 +1,9 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module Web.Alert.Renderer.Common where
+module Web.Alert.Renderer.Common
+    ( renderAlerts
+    ) where
 
-import Data.String
 import Data.Text.Lazy hiding (pack)
 
 import Text.Blaze.Html
@@ -21,7 +22,3 @@ renderAlerts baseClass clases msgs = renderHtml $ foldMap makeDivs msgs
             ! A.class_ baseClass
             ! A.class_ (clases stat)
             $ toHtml msg
-    -- foldMap (\(stat, msg) -> H.div ! A.class_ baseClass ! A.class_ (clases stat) $ msg) msgs
-
-dummyClases :: AlertStatus -> AttributeValue
-dummyClases _ = ""

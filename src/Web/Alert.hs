@@ -1,4 +1,7 @@
-module Web.Alert where
+module Web.Alert
+    ( -- * Alerts Status
+      AlertStatus(..)
+    ) where
 
 data AlertStatus
     = Default
