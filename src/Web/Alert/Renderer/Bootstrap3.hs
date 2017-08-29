@@ -4,7 +4,7 @@ module Web.Alert.Renderer.Bootstrap3
     ( renderAlertsBootstrap3
     ) where
 
-import Data.Text.Lazy hiding (pack)
+import Data.Text.Lazy
 import Text.Blaze.Html
 
 import Web.Alert
@@ -13,7 +13,7 @@ import Web.Alert.Renderer.Common
 -- | Render alerts using Bootstrap v3.x alerts
 renderAlertsBootstrap3 :: [(AlertStatus, Text)] -> Text
 renderAlertsBootstrap3 = renderAlerts
-    "alert" (Just $ customAttribute "role" "alert") bootstrap3Clases
+    "alert" [] (Just $ customAttribute "role" "alert") bootstrap3Clases
 
 bootstrap3Clases :: AlertStatus -> AttributeValue
 bootstrap3Clases Default = "alert-default"

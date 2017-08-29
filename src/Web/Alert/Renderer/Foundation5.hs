@@ -5,7 +5,7 @@ module Web.Alert.Renderer.Foundation5
     , renderAlertsFoundation5
     ) where
 
-import Data.Text.Lazy hiding (pack)
+import Data.Text.Lazy
 import Text.Blaze.Html
 
 import Web.Alert
@@ -18,9 +18,13 @@ data AlertType
     deriving (Eq, Show, Read)
 
 -- | Render alerts using Foundation v5.x alerts
-renderAlertsFoundation5 :: [(AlertStatus, Text)] -> Text
-renderAlertsFoundation5 = renderAlerts
-    "alert-box" (Just $ dataAttribute "alert" "") foundation5Clases
+renderAlertsFoundation5 :: AlertType -> [(AlertStatus, Text)] -> Text
+renderAlertsFoundation5 atype = renderAlerts
+    "alert-box" [alertTypeClass atype] (Just $ dataAttribute "alert" "") foundation5Clases
+
+alertTypeClass :: AlertType -> AttributeValue
+alertTypeClass Radius = "radius"
+alertTypeClass Round = "round"
 
 foundation5Clases :: AlertStatus -> AttributeValue
 foundation5Clases Default = "secondary"
