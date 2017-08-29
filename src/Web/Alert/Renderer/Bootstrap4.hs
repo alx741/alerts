@@ -8,12 +8,12 @@ import Data.Text.Lazy hiding (pack)
 import Text.Blaze.Html
 
 import Web.Alert
-import Web.Alert.Renderer.Bootstrap3
 import Web.Alert.Renderer.Common
 
 -- | Render alerts using Bootstrap v4.x alerts
 renderAlertsBootstrap4 :: [(AlertStatus, Text)] -> Text
-renderAlertsBootstrap4 = renderAlerts "alert" (Just roleAttr) bootstrap4Clases
+renderAlertsBootstrap4 = renderAlerts
+    "alert" (Just $ customAttribute "role" "alert") bootstrap4Clases
 
 bootstrap4Clases :: AlertStatus -> AttributeValue
 bootstrap4Clases Default = "alert-primary"
