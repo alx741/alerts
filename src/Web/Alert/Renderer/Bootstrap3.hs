@@ -12,7 +12,10 @@ import Web.Alert.Renderer.Common
 
 -- | Render alerts using Bootstrap v3.x alerts
 renderAlertsBootstrap3 :: [(AlertStatus, Text)] -> Text
-renderAlertsBootstrap3 = renderAlerts "alert" bootstrap3Clases
+renderAlertsBootstrap3 = renderAlerts "alert" (Just roleAttr) bootstrap3Clases
+
+roleAttr :: Attribute
+roleAttr = customAttribute "role" "alert"
 
 bootstrap3Clases :: AlertStatus -> AttributeValue
 bootstrap3Clases Default = "alert-default"
