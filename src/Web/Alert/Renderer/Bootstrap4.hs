@@ -2,7 +2,7 @@
 
 -- | Render 'Alert's using Bootstrap v4.x
 --
---  Dependencies (These should be accesible in your app):
+--  Dependencies (These should be accessible in your app):
 --
 -- * Bootstrap's CSS and JS
 --

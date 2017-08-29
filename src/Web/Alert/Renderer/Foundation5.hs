@@ -2,7 +2,7 @@
 
 -- | Render 'Alert's using Foundation v5.x
 --
---  Dependencies (These should be accesible in your app):
+--  Dependencies (These should be accessible in your app):
 --
 -- * Foundation's CSS and JS
 --
