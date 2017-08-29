@@ -1,15 +1,13 @@
 name:                alerts
 version:             0.1.0.0
-synopsis:            Alerts for web applications
+synopsis:            Alert messages for web applications
 description:         Alert messages for web applications:
     .
     * Bootstrap 3
     .
     * Bootstrap 4
     .
-    * Foundation
-    .
-    * Custom
+    * Foundation 5
 homepage:            https://github.com/alx741/alerts#readme
 license:             BSD3
 license-file:        LICENSE
@@ -32,23 +30,6 @@ library
   build-depends:       base >= 4.7 && < 5
                      , text >= 0.11 && < 2.0
                      , blaze-html
-  default-language:    Haskell2010
-
-executable alerts-exe
-  hs-source-dirs:      app
-  main-is:             Main.hs
-  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
-  build-depends:       base
-                     , alerts
-  default-language:    Haskell2010
-
-test-suite alerts-test
-  type:                exitcode-stdio-1.0
-  hs-source-dirs:      test
-  main-is:             Spec.hs
-  build-depends:       base
-                     , alerts
-  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
   default-language:    Haskell2010
 
 source-repository head
