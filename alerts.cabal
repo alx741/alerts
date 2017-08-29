@@ -16,6 +16,7 @@ cabal-version:       >=1.10
 library
   hs-source-dirs:      src
   exposed-modules:     Web.Alert
+                     , Web.Alert.Renderer.Bootstrap3
   other-modules:       Web.Alert.Renderer.Common
   ghc-options:         -Wall -fwarn-tabs -O2
   build-depends:       base >= 4.7 && < 5

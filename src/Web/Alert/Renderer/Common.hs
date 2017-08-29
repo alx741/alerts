@@ -4,6 +4,7 @@ module Web.Alert.Renderer.Common where
 
 import Data.String
 import Data.Text.Lazy hiding (pack)
+
 import Text.Blaze.Html
 import Text.Blaze.Html.Renderer.Text
 import qualified Text.Blaze.Html5 as H
