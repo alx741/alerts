@@ -6,8 +6,10 @@ module Web.Alert.Renderer.Common
 
 import Data.Maybe
 
-import Data.Text.Lazy
+import Data.Text.Lazy hiding (intersperse)
 import Data.Monoid
+import Data.List (intersperse)
+import Data.Foldable (fold)
 import Text.Blaze.Html
 import Text.Blaze.Html.Renderer.Text
 import qualified Text.Blaze.Html5 as H
@@ -29,10 +31,9 @@ renderAlerts baseClass extraClass mAttr mInternal clases msgs =
     where
         attr = fromMaybe mempty mAttr
         internal = fromMaybe mempty mInternal
+        extras = fold $ intersperse " " extraClass
         makeDivs (Alert stat msg) =
             H.div
             ! attr
-            ! A.class_ baseClass
-            ! A.class_ (clases stat)
-            ! foldMap A.class_ extraClass
+            ! A.class_ (baseClass <> " " <> (clases stat) <> " " <> extras)
             $ internal <> (toHtml msg)
