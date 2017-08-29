@@ -1,13 +1,21 @@
 name:                alerts
 version:             0.1.0.0
--- synopsis:
--- description:
+synopsis:            Alerts for web applications
+description:         Alert messages for web applications:
+    .
+    * Bootstrap 3
+    .
+    * Bootstrap 4
+    .
+    * Foundation
+    .
+    * Custom
 homepage:            https://github.com/alx741/alerts#readme
 license:             BSD3
 license-file:        LICENSE
-author:              Daniel Campoverde [alx741]
-maintainer:          alx741@riseup.net
-copyright:           2017 Daniel Campoverde [alx741]
+author:              Daniel Campoverde
+maintainer:          alx@sillybytes.net
+copyright:           2017 Daniel Campoverde
 category:            Web
 build-type:          Simple
 extra-source-files:  README.md
