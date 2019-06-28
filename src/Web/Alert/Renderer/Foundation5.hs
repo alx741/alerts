@@ -15,9 +15,9 @@ module Web.Alert.Renderer.Foundation5
     , AlertType(..)
     ) where
 
-import Data.Text.Lazy
-import Text.Blaze.Html
-import qualified Text.Blaze.Html5 as H
+import           Data.Text.Lazy
+import           Text.Blaze.Html
+import qualified Text.Blaze.Html5            as H
 import qualified Text.Blaze.Html5.Attributes as A
 
 import Web.Alert
@@ -48,11 +48,11 @@ close =
 
 alertTypeClass :: AlertType -> AttributeValue
 alertTypeClass Radius = "radius"
-alertTypeClass Round = "round"
+alertTypeClass Round  = "round"
 
 foundation5Clases :: AlertStatus -> AttributeValue
 foundation5Clases Default = "secondary"
-foundation5Clases Info = "info"
+foundation5Clases Info    = "info"
 foundation5Clases Success = "success"
 foundation5Clases Warning = "warning"
-foundation5Clases Error = "alert"
+foundation5Clases Error   = "alert"

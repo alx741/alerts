@@ -6,25 +6,24 @@ module Web.Alert.Renderer.Common
 
 import Data.Maybe
 
-import Data.Text.Lazy hiding (intersperse)
-import Data.Monoid
-import Data.List (intersperse)
-import Data.Foldable (fold)
-import Text.Blaze.Html
-import Text.Blaze.Html.Renderer.Text
-import qualified Text.Blaze.Html5 as H
-import qualified Text.Blaze.Html5.Attributes as A
+import           Data.Foldable                 (fold)
+import           Data.List                     (intersperse)
+import           Data.Text.Lazy                hiding (intersperse)
+import           Text.Blaze.Html
+import           Text.Blaze.Html.Renderer.Text
+import qualified Text.Blaze.Html5              as H
+import qualified Text.Blaze.Html5.Attributes   as A
 
 import Web.Alert
 
 renderAlerts
-    :: AttributeValue
-    -> [AttributeValue]
-    -> Maybe Attribute
-    -> Maybe Html
-    -> (AlertStatus -> AttributeValue)
-    -> [Alert]
-    -> Text
+ :: AttributeValue
+ -> [AttributeValue]
+ -> Maybe Attribute
+ -> Maybe Html
+ -> (AlertStatus -> AttributeValue)
+ -> [Alert]
+ -> Text
 renderAlerts _ _ _ _ _ [] = mempty
 renderAlerts baseClass extraClass mAttr mInternal clases msgs =
     renderHtml $ foldMap makeDivs msgs

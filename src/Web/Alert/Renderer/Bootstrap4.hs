@@ -12,9 +12,9 @@ module Web.Alert.Renderer.Bootstrap4
     ( renderAlertsBootstrap4
     ) where
 
-import Data.Text.Lazy
-import Text.Blaze.Html
-import qualified Text.Blaze.Html5 as H
+import           Data.Text.Lazy
+import           Text.Blaze.Html
+import qualified Text.Blaze.Html5            as H
 import qualified Text.Blaze.Html5.Attributes as A
 
 import Web.Alert
@@ -42,7 +42,7 @@ close =
 
 bootstrap4Clases :: AlertStatus -> AttributeValue
 bootstrap4Clases Default = "alert-primary"
-bootstrap4Clases Info = "alert-info"
+bootstrap4Clases Info    = "alert-info"
 bootstrap4Clases Success = "alert-success"
 bootstrap4Clases Warning = "alert-warning"
-bootstrap4Clases Error = "alert-danger"
+bootstrap4Clases Error   = "alert-danger"

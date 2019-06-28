@@ -8,7 +8,7 @@ module Web.Alert
 import Data.Text.Lazy
 
 data Alert = Alert
-    { alertStatus :: AlertStatus
+    { alertStatus  :: AlertStatus
     , alertMessage :: Text
     } deriving (Eq, Show, Read)
 
