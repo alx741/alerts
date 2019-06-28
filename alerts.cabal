@@ -8,6 +8,8 @@ description:         Alert messages for web applications:
     * Bootstrap 4
     .
     * Foundation 5
+    .
+    * Bulma
 homepage:            https://github.com/alx741/alerts#readme
 license:             BSD3
 license-file:        LICENSE
@@ -25,6 +27,7 @@ library
                      , Web.Alert.Renderer.Bootstrap3
                      , Web.Alert.Renderer.Bootstrap4
                      , Web.Alert.Renderer.Foundation5
+                     , Web.Alert.Renderer.Bulma
   other-modules:       Web.Alert.Renderer.Common
   ghc-options:         -Wall -fwarn-tabs -O2
   build-depends:       base >= 4.7 && < 5
