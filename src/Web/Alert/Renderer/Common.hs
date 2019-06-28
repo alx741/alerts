@@ -8,6 +8,7 @@ import Data.Maybe
 
 import           Data.Foldable                 (fold)
 import           Data.List                     (intersperse)
+import           Data.Monoid                   ((<>))
 import           Data.Text.Lazy                hiding (intersperse)
 import           Text.Blaze.Html
 import           Text.Blaze.Html.Renderer.Text
