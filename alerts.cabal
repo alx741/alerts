@@ -31,7 +31,7 @@ library
   other-modules:       Web.Alert.Renderer.Common
   ghc-options:         -Wall -fwarn-tabs
   build-depends:       base >= 4.7 && < 5
-                     , text >= 0.11 && < 2.0
+                     , text >= 0.11 && < 2.2
                      , blaze-html
   default-language:    Haskell2010
 
